@@ -5,7 +5,9 @@ import uuid
 class DonkeyDB:
     def __init__(self):
         self._db_file = os.fdopen(os.open("donkey.db", os.O_RDWR | os.O_CREAT), "rb+")
-        self._keys_file = os.fdopen(os.open("donkey.keys", os.O_RDWR | os.O_CREAT), "r+")
+        self._keys_file = os.fdopen(
+            os.open("donkey.keys", os.O_RDWR | os.O_CREAT), "r+"
+        )
         self._keys = {}
 
         for line in self._keys_file:
